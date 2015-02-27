@@ -60,4 +60,12 @@ public class MiHashSet
         }
         return existe;
     }
+    
+    /**
+     * Devuelve true si no hay enteros guardados
+     * Devuelve false si hay algun elemento guardado
+     */
+    public boolean isEmpty(){
+        return (arrayDeEnteros.length == 0);
+    }
 }
