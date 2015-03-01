@@ -90,4 +90,11 @@ public class MiHashSet
         }
         return existe;
     }
+    
+    /**
+     * Devuelve el numero de elementos guardados
+     */
+    public int size(){
+        return arrayDeEnteros.length;
+    }
 }
