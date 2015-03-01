@@ -1,4 +1,3 @@
- 
 import java.util.Arrays;
 /**
  * Coleccion de enteros
@@ -113,5 +112,25 @@ public class MiHashSet
         }
         cadena += "]";
         return cadena;
+    }
+    
+    /**
+     * Compara este MiHashSet con otro
+     * Devuelve true si son iguales
+     */
+    public boolean equals(MiHashSet otroArray){
+        boolean iguales = true;
+        int longitudArray = arrayDeEnteros.length;
+        if (longitudArray == otroArray.size()){
+            int contador = 0;
+            for (; ((contador < longitudArray) && (iguales)); contador++){
+                if(!otroArray.contains(arrayDeEnteros[contador])){
+                    iguales = false;
+                }
+            }
+        }else{
+            iguales = false;
+        }
+        return iguales;
     }
 }
