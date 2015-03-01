@@ -97,4 +97,21 @@ public class MiHashSet
     public int size(){
         return arrayDeEnteros.length;
     }
+    
+    /**
+     * Devuelve el contenido del MiHashMap como String
+     * Formato: [1,2,3,4]
+     */
+    public String toString(){
+        String cadena ="[";
+        if(arrayDeEnteros.length != 0){
+            cadena += arrayDeEnteros[0];
+            int contador = 1;
+            for (; contador < arrayDeEnteros.length; contador++){
+                cadena += ("," + arrayDeEnteros[contador]);
+            }
+        }
+        cadena += "]";
+        return cadena;
+    }
 }
