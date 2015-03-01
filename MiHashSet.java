@@ -68,4 +68,26 @@ public class MiHashSet
     public boolean isEmpty(){
         return (arrayDeEnteros.length == 0);
     }
+    
+    /**
+     * Elimina el elemento indicado
+     * Si existe, devuelve true
+     * Si no existe, devuelve false
+     */
+    public boolean remove(int elemento){
+        boolean existe = contains(elemento);
+        if (existe){
+            int longitud = arrayDeEnteros.length;
+            int[] arrayTemp = new int[longitud - 1];
+            int contador = 0;
+            for (; arrayDeEnteros[contador] != elemento; contador++){
+                arrayTemp[contador] = arrayDeEnteros[contador];
+            }
+            for (; contador < longitud - 1; contador++){
+                arrayTemp[contador] = arrayDeEnteros[contador + 1];
+            }
+            arrayDeEnteros = arrayTemp;
+        }
+        return existe;
+    }
 }
