@@ -3,14 +3,17 @@ import java.util.Arrays;
  * Coleccion de enteros
  * Interfaz ArrayList
  * Implementacion Array
+ * 
+ * @author Sourdaci
+ * @version 1.1 (2015-03-02 02)
  */
 public class MiHashSet
 {
-    // instance variables - replace the example below with your own
+    // Declaracion de int[] que almacena los valores
     private int[] arrayDeEnteros;
 
     /**
-     * Creamos el array vacio
+     * Inicializacion de atributos
      */
     public MiHashSet()
     {
@@ -18,10 +21,13 @@ public class MiHashSet
     }
 
     /**
-     * Agregamos un entero al final del array
+     * Agregamos un valor al final del array
+     * 
+     * @param valor El valor que queremos almacenar
+     * @return exito 'true' si se ha incluido el valor, 'false' si el valor ya existe
      */
     public boolean add(int valor){
-        boolean existe = true;
+        boolean exito = true;
         if (!contains(valor)){
             int longitudBase = arrayDeEnteros.length; // Guardo tamaño
             // Creo una copia de si mismo con un espacio mas
@@ -29,9 +35,9 @@ public class MiHashSet
             // Agrego el valor en la ultima posicion, que es el tamaño antes de la copia
             arrayDeEnteros[longitudBase] = valor;
         }else{
-            existe = false;
+            exito = false;
         }
-        return existe;
+        return exito;
     }
     
     /**
@@ -43,8 +49,9 @@ public class MiHashSet
     
     /**
      * Busca el elemento pedido
-     * Si existe, devuelve true
-     * Si no existe, devuelve false
+     * 
+     * @param valor El valor que quieres saber si existe
+     * @return existe 'true' si se encuentra el valor, 'false' si no se encuentra
      */
     public boolean contains(int elemento){
         boolean existe = false;
@@ -61,8 +68,9 @@ public class MiHashSet
     }
     
     /**
-     * Devuelve true si no hay enteros guardados
-     * Devuelve false si hay algun elemento guardado
+     * Indica si el MiHashSet esta o no vacio
+     * 
+     * @return vacio 'true' si MiHashSet esta vacio, 'false' si contiene elementos
      */
     public boolean isEmpty(){
         return (arrayDeEnteros.length == 0);
@@ -70,16 +78,17 @@ public class MiHashSet
     
     /**
      * Elimina el elemento indicado
-     * Si existe, devuelve true
-     * Si no existe, devuelve false
+     * 
+     * @param valor El elemento a borrar
+     * @return existe 'true' si se ha borrado el valor, 'false' si el valor no existe
      */
-    public boolean remove(int elemento){
-        boolean existe = contains(elemento);
+    public boolean remove(int valor){
+        boolean existe = contains(valor);
         if (existe){
             int longitud = arrayDeEnteros.length;
             int[] arrayTemp = new int[longitud - 1];
             int contador = 0;
-            for (; arrayDeEnteros[contador] != elemento; contador++){
+            for (; arrayDeEnteros[contador] != valor; contador++){
                 arrayTemp[contador] = arrayDeEnteros[contador];
             }
             for (; contador < longitud - 1; contador++){
@@ -92,14 +101,18 @@ public class MiHashSet
     
     /**
      * Devuelve el numero de elementos guardados
+     * 
+     * @return cantidad El numero de valores almacenados en MiHashSet
      */
     public int size(){
         return arrayDeEnteros.length;
     }
     
     /**
-     * Devuelve el contenido del MiHashMap como String
+     * Representacion del contenido del MiHashMap como String
      * Formato: [1,2,3,4]
+     * 
+     * @return cadena 'String' que contiene los valores guardados en MiHashMap
      */
     public String toString(){
         String cadena ="[";
@@ -116,7 +129,10 @@ public class MiHashSet
     
     /**
      * Compara este MiHashSet con otro
-     * Devuelve true si son iguales
+     * 
+     * @param otroArray El 'MiHashSet' que quiere compararse
+     * 
+     * @return iguales 'true' si son iguales, 'false' si son diferentes
      */
     public boolean equals(MiHashSet otroArray){
         boolean iguales = true;
