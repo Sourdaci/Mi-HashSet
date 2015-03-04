@@ -24,7 +24,7 @@ public class MiHashSet
      * Agregamos un valor al final del array
      * 
      * @param valor El valor que queremos almacenar
-     * @return exito 'true' si se ha incluido el valor, 'false' si el valor ya existe
+     * @return 'true' si se ha incluido el valor, 'false' si el valor ya existe
      */
     public boolean add(int valor){
         boolean exito = true;
@@ -51,7 +51,7 @@ public class MiHashSet
      * Busca el elemento pedido
      * 
      * @param valor El valor que quieres saber si existe
-     * @return existe 'true' si se encuentra el valor, 'false' si no se encuentra
+     * @return 'true' si se encuentra el valor, 'false' si no se encuentra
      */
     public boolean contains(int elemento){
         boolean existe = false;
@@ -70,7 +70,7 @@ public class MiHashSet
     /**
      * Indica si el MiHashSet esta o no vacio
      * 
-     * @return vacio 'true' si MiHashSet esta vacio, 'false' si contiene elementos
+     * @return 'true' si MiHashSet esta vacio, 'false' si contiene elementos
      */
     public boolean isEmpty(){
         return (arrayDeEnteros.length == 0);
@@ -80,7 +80,7 @@ public class MiHashSet
      * Elimina el elemento indicado
      * 
      * @param valor El elemento a borrar
-     * @return existe 'true' si se ha borrado el valor, 'false' si el valor no existe
+     * @return 'true' si se ha borrado el valor, 'false' si el valor no existe
      */
     public boolean remove(int valor){
         boolean existe = contains(valor);
@@ -102,7 +102,7 @@ public class MiHashSet
     /**
      * Devuelve el numero de elementos guardados
      * 
-     * @return cantidad El numero de valores almacenados en MiHashSet
+     * @return El numero de valores almacenados en MiHashSet
      */
     public int size(){
         return arrayDeEnteros.length;
@@ -112,7 +112,7 @@ public class MiHashSet
      * Representacion del contenido del MiHashMap como String
      * Formato: [1,2,3,4]
      * 
-     * @return cadena 'String' que contiene los valores guardados en MiHashMap
+     * @return 'String' que contiene los valores guardados en MiHashMap
      */
     public String toString(){
         String cadena ="[";
@@ -131,8 +131,7 @@ public class MiHashSet
      * Compara este MiHashSet con otro
      * 
      * @param otroArray El 'MiHashSet' que quiere compararse
-     * 
-     * @return iguales 'true' si son iguales, 'false' si son diferentes
+     * @return 'true' si son iguales, 'false' si son diferentes
      */
     public boolean equals(MiHashSet otroArray){
         boolean iguales = true;
